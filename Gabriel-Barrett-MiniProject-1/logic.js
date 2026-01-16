@@ -1,15 +1,32 @@
+let resetGame = (box) => {
+    box.forEach(box => {
+        box.textContent = "";
+ })
+}
 
 let Player = "X"
-let Turn0 = true
-const resetButton = document.getElementById("reset")
+let turn = true
+
+let resetButton = document.getElementById("reset")
 resetButton.addEventListener("click", resetGame)
-const resetGame = () => {
-    Turn0 = true
-    Player = "X"
 
 
-}
-const grid = document.querySelectorAll("gridCells")
+let grid = document.querySelectorAll(".gridCells")
+
+grid.forEach((box) => {
+  box.addEventListener("click", () => {
+    if (box.innerText !== "") return; 
+    if (turn) {
+      box.innerText = "X";
+      box.style.color = "red";
+      turn = false;
+    } else {
+      box.innerText = "O";
+      box.style.color = "black";
+      turn = true;
+    }
+  })
+})
 
 const winSequence = [
     [0, 1, 2],
@@ -22,18 +39,6 @@ const winSequence = [
     [6, 7, 8]
 ]
 
-grid.forEach((box)) => {
-    box.addEventListener("click",() =>{
-        if (Turn0){
-            box.innerText = "X"
-            box.style.color = "Red"
-            turn0 = false
-            box.disabled = 
-        } else {
-            box.innerText = "O"
-            box.style.color = "Black"
-            Turn0
-        }
-    }
-    )
+let winner = () => {
+    
 }

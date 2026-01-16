@@ -55,11 +55,6 @@ button{
 
 }
 
-
-.x {
-    color: red;
-}
-
-.O {
-    color: blue
+.hide{
+    display:none
 }
