@@ -1,32 +1,46 @@
-let resetGame = (box) => {
-    box.forEach(box => {
-        box.textContent = "";
- })
-}
-
-let Player = "X"
-let turn = true
-
-let resetButton = document.getElementById("reset")
-resetButton.addEventListener("click", resetGame)
-
+let player = true
 
 let grid = document.querySelectorAll(".gridCells")
 
-grid.forEach((box) => {
+grid.forEach((box, i) => {
   box.addEventListener("click", () => {
-    if (box.innerText !== "") return; 
-    if (turn) {
-      box.innerText = "X";
-      box.style.color = "red";
-      turn = false;
+    if (box.innerText !== "") return 
+    let symbol
+    if (player) {
+      box.innerText = "X"
+      box.style.color = "red"
+      symbol =  "X"
+      player = false
+    let row = Math.floor(box.id / 3)
+    console.log(row)
+    let column = box.id % 3
+    console.log(column)
+    currentBoard[row][column] = symbol
+    console.log(currentBoard)
     } else {
       box.innerText = "O";
-      box.style.color = "black";
-      turn = true;
+      box.style.color = "black"
+      symbol = "O"
+      player = true;
+       console.log(box.id)
+    let row = Math.floor(box.id / 3)
+    console.log(row)
+    let column = box.id % 3
+    console.log(column)
+    currentBoard[row][column] = symbol
+    console.log(currentBoard)
     }
   })
 })
+
+let currentBoard = [
+  ["", "", ""],["", "", ""],["", "", ""]
+]
+
+//actual board visualisation 
+// [0,1,2]
+// [3,4,5]
+// [6,7,8]
 
 const winSequence = [
     [0, 1, 2],
