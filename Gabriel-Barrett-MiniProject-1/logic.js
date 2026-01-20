@@ -2,7 +2,7 @@ let player = true
 
 let grid = document.querySelectorAll(".gridCells")
 
-grid.forEach((box, i) => {
+grid.forEach((box) => {
   box.addEventListener("click", () => {
     if (box.innerText !== "") return 
     let symbol
@@ -22,7 +22,7 @@ grid.forEach((box, i) => {
       box.style.color = "black"
       symbol = "O"
       player = true;
-       console.log(box.id)
+      console.log(box.id)
     let row = Math.floor(box.id / 3)
     console.log(row)
     let column = box.id % 3
@@ -54,5 +54,6 @@ const winSequence = [
 ]
 
 let winner = () => {
+  for (const sequence )
     
 }
