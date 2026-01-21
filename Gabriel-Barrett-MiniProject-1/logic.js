@@ -54,6 +54,9 @@ const winSequence = [
 ]
 
 let winner = () => {
-  for (const sequence )
-    
-}
+   if (i of winSequence) {
+    let valueOne = gridcells[i][0] = innerText
+    let valueTwo = gridcells[i][1] = innerText
+    let valueThree = gridcells[i][2] = innerText
+}}
+
